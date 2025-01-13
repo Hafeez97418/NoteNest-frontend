@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteNest - Login to Your Notebook</title>
+    <meta
+      name="description"
+      content="Login to NoteNest, the ultimate online notebook for organizing your notes seamlessly. Secure, fast, and user-friendly."
+    />
+    <meta
+      name="keywords"
+      content="NoteNest, online notebook, login, notes, organize"
+    />
+    <meta name="author" content="NoteNest Team" />
+    <meta property="og:title" content="NoteNest - Online Notebook Login" />
+    <meta
+      property="og:description"
+      content="Access your notes anywhere with NoteNest. Login securely to manage your tasks and notes effortlessly."
+    />
+    <meta property="og:image" content="/android-chrome-512x512.png" />
+    <meta property="og:url" content="https://www.notenest.com/login.html" />
+    <meta property="og:type" content="website" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main
+      class="h-screen bg-[url('/login_background.webp')] bg-cover bg-center flex items-center justify-center py-4 px-2"
+    >
+      <!-- Login form start -->
+      <form
+        class="block w-full my-12 md:w-1/2 border-2 border-black rounded-xl backdrop-blur-sm p-4 text-white transition-transform -translate-y-full duration-700 ease-out delay-75"
+        id="loginForm"
+        aria-label="Login Form"
+        style="
+          background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          );
+        "
+      >
+        <h1 class="text-2xl font-bold inter">Login to NoteNest</h1>
+        <p class="text-sm text-gray-100">
+          Your secure and easy-to-use online notebook.
+        </p>
+        <div class="flex flex-col my-4">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="outline-none border-transparent border-2 bg-transparent text-sm"
+            placeholder="Enter your email"
+          />
+          <div class="bg-gradient-to-r from-blue-500 to-blue-100 h-1"></div>
+        </div>
+        <div class="flex flex-col my-4">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            class="outline-none border-transparent border-2 bg-transparent text-sm"
+            placeholder="Enter your password"
+          />
+          <div class="bg-gradient-to-r from-blue-500 to-blue-100 h-1"></div>
+        </div>
+        <div class="flex my-8 justify-between items-center">
+          <p class="text-sm">
+            Don't have an account?
+            <a href="/register.html" class="underline">Sign up here</a>
+          </p>
+          <button
+            type="submit"
+            class="p-2 bg-blue-500 text-white rounded-lg"
+            aria-label="Submit Login Form"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+      <!-- Login form end -->
+    </main>
+    <script src="./ts/pages/login.ts" type="module"></script>
+  </body>
+</html>

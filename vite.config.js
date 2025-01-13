@@ -4,6 +4,15 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   return {
     base: "./",
+    build: {
+      rollupOptions: {
+        input: {
+          login: path.resolve(__dirname, "src/login.html"),
+          home: path.resolve(__dirname, "src/index.html"),
+          register: path.resolve(__dirname, "src/register.html"),
+        },
+      },
+    },
     root: path.resolve(__dirname, "src"),
     resolve: {
       alias: {
@@ -12,6 +21,6 @@ export default defineConfig(({ mode }) => {
     },
     define: {
       __APP_ENV__: JSON.stringify(env.APP_ENV),
-      },
+    },
   };
 });

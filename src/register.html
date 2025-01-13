@@ -3,20 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoteNest-register</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <meta property="og:title" content="NoteNest" />
-    <meta property="og:description" content="a notebook website" />
+    <title>NoteNest - Sign Up</title>
+    <meta
+      name="description"
+      content="Sign up for NoteNest, the ultimate online notebook for organizing your notes seamlessly. Join today for secure and fast note management."
+    />
+    <meta name="keywords" content="NoteNest, online notebook, sign up, notes, organize" />
+    <meta name="author" content="NoteNest Team" />
+    <meta property="og:title" content="NoteNest - Sign Up" />
+    <meta property="og:description" content="Create your account with NoteNest and manage your notes efficiently. Start organizing your tasks today!" />
     <meta property="og:image" content="/android-chrome-512x512.png" />
+    <meta property="og:url" content="https://www.notenest.com/register.html" />
+    <meta property="og:type" content="website" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <main
       class="w-full px-4 pt-4 text-lg flex flex-col items-center md:flex-row md:py-0 md:gap-2 md:pl-0 md:h-[100vh]"
     >
-      <!-- register page display start -->
+      <!-- Register page display start -->
       <div
         class="w-full h-44 bg-center bg-cover bg-no-repeat rounded-2xl flex items-start justify-end flex-col md:justify-start md:rounded-none md:p-4 md:h-full"
         style="
@@ -30,7 +38,7 @@
         <a href="/register.html" alt="NoteNest-register">
           <img
             src="/apple-touch-icon.png"
-            alt="NoteNest"
+            alt="NoteNest Logo"
             class="rounded-full flex items-center justify-center h-16 w-16 relative top-4 right-4 md:right-0 md:top-0 md:rounded-md"
           />
         </a>
@@ -40,86 +48,104 @@
           </h1>
         </div>
       </div>
-      <!-- register page display end -->
+      <!-- Register page display end -->
 
-      <!-- register form start -->
-      <form class="block w-full my-12 md:w-1/2" id="registerForm">
+      <!-- Register form start -->
+      <form class="block w-full my-12 md:w-1/2" id="registerForm" aria-label="Registration Form">
         <h1 class="text-2xl font-bold inter">Sign up</h1>
         <div class="flex flex-col my-4">
-          <label for="firstName">first name</label>
+          <label for="firstName">First Name</label>
           <input
             type="text"
             name="firstName"
             id="firstName"
+            required
             class="outline-none border-transparent border-2 bg-transparent text-sm"
+            placeholder="Enter your first name"
           />
           <div class="bg-gradient-to-r from-blue-500 to-blue-100 h-1"></div>
         </div>
         <div class="flex flex-col my-4">
-          <label for="lastName">last name</label>
+          <label for="lastName">Last Name</label>
           <input
             type="text"
             name="lastName"
             id="lastName"
+            required
             class="outline-none border-transparent border-2 bg-transparent text-sm"
+            placeholder="Enter your last name"
           />
           <div class="bg-gradient-to-r from-blue-500 to-blue-100 h-1"></div>
         </div>
         <div class="flex flex-col my-4">
-          <label for="email">email</label>
+          <label for="email">Email</label>
           <input
             type="email"
             name="email"
             id="email"
+            required
             class="outline-none border-transparent border-2 bg-transparent text-sm"
+            placeholder="Enter your email"
           />
           <div class="bg-gradient-to-r from-blue-500 to-blue-100 h-1"></div>
         </div>
         <div class="flex flex-col my-4">
-          <label for="password">password</label>
+          <label for="password">Password</label>
           <input
             type="password"
             name="password"
             id="password"
+            required
+            minlength="8"
             class="outline-none border-transparent border-2 bg-transparent text-sm"
+            placeholder="Enter a strong password"
           />
           <div class="bg-gradient-to-r from-blue-500 to-blue-100 h-1"></div>
         </div>
         <div class="flex my-8 justify-between items-center">
           <p class="text-sm">
-            already have an account?
-            <a href="/login.html" class="underline">login</a>
+            Already have an account?
+            <a href="/login.html" class="underline">Login</a>
           </p>
-          <button type="submit" class="p-2 bg-blue-500 text-white rounded-lg">
-            submit
+          <button type="submit" class="p-2 bg-blue-500 text-white rounded-lg" aria-label="Submit Registration Form">
+            Submit
           </button>
         </div>
       </form>
+      <!-- Register form end -->
+
+      <!-- Modal container start  -->
       <div
         class="backdrop-blur-sm w-full h-full absolute top-0 z-10 items-center justify-center py-4 px-2 hidden"
         id="otpModalDiv"
       >
         <form
-          class=" w-full md:w-1/2  bg-white rounded-xl border-2 border-black py-4 px-2 "
+          class="w-full md:w-1/2 bg-white rounded-xl border-2 border-black py-4 px-2"
           id="otpForm"
+          aria-label="OTP Form"
         >
           <h1 class="text-2xl inter font-extrabold">Sign up</h1>
           <div class="flex flex-col my-4 gap-4">
-            <label for="otp">first name</label>
+            <label for="otp">OTP</label>
             <input
               type="number"
               name="otp"
               id="otp"
               required
-              placeholder="OTP"
+              placeholder="Enter OTP"
               class="bg-black outline-white rounded-xl p-2 text-white"
             />
-            <button type="submit" class="w-fit p-2  bg-blue-500 text-white rounded-lg">
-              submit
+            <button
+              type="submit"
+              class="w-fit p-2 bg-blue-500 text-white rounded-lg"
+              aria-label="Submit OTP"
+            >
+              Submit
             </button>
           </div>
         </form>
       </div>
+      <!-- Modal container end -->
     </main>
     <script src="./ts/pages/register.ts" type="module"></script>
   </body>
