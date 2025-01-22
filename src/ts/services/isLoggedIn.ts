@@ -8,6 +8,9 @@ async function pageAccess() {
   if (data.status === 401) {
     window.location.replace("/unauthorized.html");
   }
+  return data;
 }
 
-pageAccess();
+const user = pageAccess();
+
+export default user;

@@ -32,7 +32,6 @@ class LoginManager extends loginFormManager {
       this.req.URLObject.endpoint = "/api/v1/user/login";
       this.req.options.method = "POST";
       this.req.options.body = body;
-      console.log(this.req.options);
 
       const res = await this.req.fetchData();
       btn.innerHTML = "submit";

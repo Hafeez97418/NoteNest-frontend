@@ -4,80 +4,81 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoteNest-Home</title>
+    <title>NoteNest - Home</title>
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body class="px-2 py-4">
-    <header>
-      <nav class="navbar bg-black text-neutral-content rounded-xl">
-        <div class="flex navbar-start">
-          <a class="btn btn-ghost text-xl" href="/">NoteNest</a>
-        </div>
-        <ul
-          class="hidden gap-2 items-center justify-center navbar-center md:flex"
-        >
-          <li><a href="/login.html">login</a></li>
-          <li><a href="/register.html">register</a></li>
-        </ul>
-        <div class="flex-none gap-4 navbar-end">
-          <div class="form-control">
-            <input
-              type="text"
-              placeholder="Search"
-              class="input w-24 md:w-auto bg-black outline outline-2 focus:outline-current"
-            />
-          </div>
-          <div class="dropdown dropdown-end">
-            <div
-              tabindex="0"
-              role="button"
-              class="btn btn-ghost btn-circle avatar"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content bg-black rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              <li>
-                <span class="justify-between">
-                  Profile
-                  <span class="badge">New</span>
-                </span>
-              </li>
-              <li><span>Logout</span></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <body class="px-2 pt-4 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header id="Navbar" class="mb-4">
+      <!-- Navbar content can go here -->
     </header>
 
-    <main class="min-h-screen"></main>
+    <!-- Main Content -->
+    <main class="my-4 flex-grow drawer">
+      <!-- Drawer Toggle (Hidden Checkbox) -->
+      <input id="sidebar" type="checkbox" class="drawer-toggle" />
 
-    <footer class="footer footer-center bg-black text-neutral-content p-4">
-      <aside>
-        <p>
-          Copyright © <span id="footerDate"></span> - All right reserved by
-          NoteNest
-        </p>
-      </aside>
+      <!-- Drawer Content (Main Page) -->
+      <section class="drawer-content">
+        <div class="flex items-center md:w-fit md:gap-40">
+          <h1 class="w-full">Your Notes</h1>
+          <!-- Drawer Button -->
+          <label
+            for="sidebar"
+            id="sideBarOpenBtnForNotes"
+            class="btn rounded-full w-12 bg-blue-500 text-2xl text-white h-12 p-2 font-bold text-center drawer-button"
+          >
+            +
+          </label>
+        </div>
+        <section
+          id="notesGrid"
+          class="py-2 grid md:grid-cols-2 gap-4 my-4"
+        ></section>
+      </section>
+
+      <!-- Drawer Sidebar -->
+      <section class="drawer-side">
+        <!-- Drawer Overlay -->
+        <label
+          for="sidebar"
+          aria-label="Close Sidebar"
+          class="drawer-overlay"
+        ></label>
+        <!-- Sidebar Menu -->
+        <div
+          class="menu bg-base-200 text-base-content min-h-full w-full lg:w-1/2 p-4"
+        >
+          <span>
+            <label
+              for="sidebar"
+              aria-label="Close Sidebar"
+              class="drawer-button"
+              >close</label
+            >
+          </span>
+          <div id="sidebar-container"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <dialog id="user_modal" class="modal">
+      <div class="modal-box bg-blue-500 text-white" id="user_modal_box">
+        <form method="dialog">
+          <button class="btn bg-black text-white hover:bg-black">Close</button>
+          <button class="btn bg-black text-white hover:bg-black">Edit</button>
+        </form>
+      </div>
+    </dialog>
+
+    <!-- Footer -->
+    <footer id="Footer" class="mt-4">
+      <!-- Footer content can go here -->
     </footer>
-    <script>
-      document.querySelector("#footerDate").innerHTML =
-        new Date().getFullYear();
-    </script>
+
+    <!-- Scripts -->
     <script type="module" src="./ts/pages/index.ts"></script>
   </body>
 </html>

@@ -1,15 +1,19 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 * {
-  font-family: "Roboto",serif;
+  font-family: "Roboto", serif;
 }
-.inter{
-  font-family: "Inter",serif;
+.inter {
+  font-family: "Inter", serif;
+}
+
+h1 {
+  @apply text-3xl md:text-4xl inter font-bold;
+}
+h2{
+  @apply text-2xl inter font-bold;
 }

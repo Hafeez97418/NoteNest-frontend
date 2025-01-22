@@ -36,7 +36,6 @@ class MakeRequests {
       response = await response.json();
       const res: any = response as unknown;
       res.status = status;
-      console.log(res);//delete this in production
       return res;
     } catch (error: any) {
       return { success: false, message: error.message };
