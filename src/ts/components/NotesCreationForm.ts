@@ -7,8 +7,6 @@ import { notesUIManager } from "./NotesContainer";
 
 const req = new MakeRequests();
 const createNotesForm = (values?: Notes) => {
-  console.log(values);
-
   return `<section class="mt-4">
   <h1 class="text-lg font-semibold">Create Notes</h1>
   <form id="NotesCreationForm" class="flex flex-col gap-4 mt-6">
@@ -56,8 +54,8 @@ class CreateNotesFormManager {
     this.addContentToSelect();
     this.createNotes();
   }
- public async addContentToSelect() {
-    addContentToSelect(this.selectElem)
+  public async addContentToSelect() {
+    addContentToSelect(this.selectElem);
   }
   createNotes() {
     const btn = this.form.querySelector("button") as HTMLButtonElement;
@@ -75,8 +73,11 @@ class CreateNotesFormManager {
         req.options.method = "POST";
         req.options.body = body;
         const res = await req.fetchData();
+        if (res.success) {
+          notesUIManager.displayNotes();
+          window.location.reload();
+        }
         btn.innerHTML = "save";
-        notesUIManager.displayNotes();
         alert.FireAlert(res.message);
       });
     });

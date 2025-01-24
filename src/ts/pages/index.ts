@@ -2,7 +2,7 @@ import user from "../services/isLoggedIn";
 import "../components/NotesContainer";
 import "../components/Navbar";
 import "../components/Footer";
-
+import "../components/TagList";
 const userModalBox = document.querySelector("#user_modal_box") as HTMLElement;
 
 user.then((data) => {

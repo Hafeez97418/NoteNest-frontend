@@ -1,6 +1,6 @@
 import { Notes } from "../Types";
 
-export function Card(note: Notes) {
+export function Card(note: Notes) {  
   const date = new Date(note.createdAt as string);
   return `
        <div class="card shadow-xl p-4 border-2 min-h-16">
