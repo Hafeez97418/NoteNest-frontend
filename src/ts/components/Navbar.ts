@@ -13,7 +13,7 @@ Navbar.innerHTML = `
         </div>
         <div class="flex-none gap-4 navbar-end">
           <div class="form-control ">
-            <input type="text" placeholder="Search" class="input w-24 md:w-auto bg-blue-500 placeholder:text-white focus:bg-blue-600" />
+            <input type="text" placeholder="Search" class="input w-24 md:w-auto bg-blue-500 placeholder:text-white focus:bg-blue-600" id="searchBar" />
           </div>
           <div class="dropdown dropdown-end ">
             <div
