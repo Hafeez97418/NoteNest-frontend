@@ -5,11 +5,15 @@ export default defineConfig(({ mode }) => {
   return {
     base: "./",
     build: {
+      outDir: "../dist",
+      emptyOutDir: true,
       rollupOptions: {
         input: {
           login: path.resolve(__dirname, "src/login.html"),
           home: path.resolve(__dirname, "src/index.html"),
           register: path.resolve(__dirname, "src/register.html"),
+          unauthorized: path.resolve(__dirname, "src/unauthorized.html"),
+          admin: path.resolve(__dirname, "src/admin.html"),
         },
       },
     },
@@ -21,6 +25,9 @@ export default defineConfig(({ mode }) => {
     },
     define: {
       __APP_ENV__: JSON.stringify(env.APP_ENV),
+    },
+    server: {
+      port: 5500,
     },
   };
 });

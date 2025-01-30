@@ -17,3 +17,5 @@ h1 {
 h2{
   @apply text-2xl inter font-bold;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));

@@ -7,3 +7,18 @@ export type Notes = {
   createdAt?: string;
   updatedAt?: string;
 };
+
+export interface User {
+  _id: string;
+  firstName: string;
+  lastName: string;
+  role: "user" | "admin";
+  createdAt: string;
+  email: string;
+}
+
+export interface Theme {
+  name: string;
+  color: string;
+  _id: string;
+}

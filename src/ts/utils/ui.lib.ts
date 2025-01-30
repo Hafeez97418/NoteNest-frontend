@@ -10,8 +10,7 @@ async function addContentToSelect(selectElem: HTMLSelectElement) {
         </option>`
     );
   });
-  return themes;
+  return Array.from(selectElem.children);
 }
 
-
-export  { addContentToSelect };
+export { addContentToSelect };

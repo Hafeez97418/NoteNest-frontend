@@ -33,7 +33,6 @@ class SearchNotes {
       str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const safeValue = escapeRegex(this.value);
     const regex = new RegExp(safeValue, "gi");
-    console.log(regex);
     return this.notes.filter((note) => regex.test(note.title));
   }
 }

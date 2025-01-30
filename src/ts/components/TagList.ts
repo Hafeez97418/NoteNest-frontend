@@ -22,7 +22,7 @@ class TagList {
     tags.map((tag) => {
       this.container.insertAdjacentHTML(
         "beforeend",
-        `<span class="border-2 border-black rounded-xl btn hover:bg-blue-500 hover:text-white" data-tag="${tag}">
+        `<span class="border-2 border-black rounded-xl btn hover:bg-blue-700 hover:text-white" data-tag="${tag}">
           ${tag}
         </span>`
       );
@@ -46,7 +46,7 @@ class TagList {
       removeTags(attribute);
       notesUIManager.displayNotes();
     } else {
-      btn.classList.add("bg-blue-500", "text-white");
+      btn.classList.add("bg-blue-700", "text-white");
       btn.setAttribute(attribute, "");
       const filteredNotes = this.notes.filter((note) => note.tag === tag);
 
@@ -59,7 +59,7 @@ class TagList {
   }
 }
 
-notes.then((data) => {
+notes.then(async (data) => {
   if (data.success) {
     new TagList(data.notes);
   }

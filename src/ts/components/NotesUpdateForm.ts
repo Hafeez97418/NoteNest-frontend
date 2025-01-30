@@ -32,8 +32,13 @@ class NotesUpdateForm {
       const selectElem = document.querySelector(
         "#selectThemes"
       ) as HTMLSelectElement;
-      addContentToSelect(selectElem);
-      selectElem.value = note.color;
+      const optionsArray = await addContentToSelect(selectElem);
+      const filteredOptionElem = optionsArray.find((elem) => {
+        return elem.getAttribute("style") === `background-color:${note.color}`;
+      });
+      if (filteredOptionElem) {
+        filteredOptionElem.setAttribute("selected", "true");
+      }
       this.UpdateNotes(id);
       this.deleteNotes(id);
     }

@@ -1,11 +1,13 @@
 import { Notes } from "../Types";
 
-export function Card(note: Notes) {  
+export function Card(note: Notes) {
   const date = new Date(note.createdAt as string);
   return `
-       <div class="card shadow-xl p-4 border-2 min-h-16">
+       <div class="card shadow-xl p-4 border-2 min-h-16" style="background-Color:${
+         note.color
+       }">
             <div class="flex-grow">
-              <h4 class="card-title uppercase">${note.title}</h4>
+              <h2 class="card-title uppercase">${note.title}</h2>
               <p class="card-body px-0 py-2">
                 ${note.body}
               </p>

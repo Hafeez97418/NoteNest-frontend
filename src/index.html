@@ -2,87 +2,56 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoteNest - Home</title>
-    <!-- Stylesheet -->
+    <title>NoteNest - Home | Your Online Notebook</title>
+    <meta name="description" content="Organize your notes efficiently with NoteNest, the ultimate online notebook. Secure, fast, and easy to use." />
+    <meta name="keywords" content="NoteNest, online notebook, notes, organize, task management" />
+    <meta name="author" content="NoteNest Team" />
+    <meta property="og:title" content="NoteNest - Your Online Notebook" />
+    <meta property="og:description" content="Manage your notes effortlessly with NoteNest. Secure, organized, and accessible from anywhere." />
+    <meta property="og:image" content="/android-chrome-512x512.png" />
+    <meta property="og:url" content="https://www.notenest.com/" />
+    <meta property="og:type" content="website" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="px-2 pt-4 min-h-screen flex flex-col">
-    <!-- Header -->
-    <header id="Navbar" class="mb-4">
-      <!-- Navbar content can go here -->
-    </header>
-
-    <!-- Main Content -->
+    <header id="Navbar" class="mb-4"></header>
+    
     <main class="my-4 flex-grow drawer">
-      <!-- Drawer Toggle (Hidden Checkbox) -->
       <input id="sidebar" type="checkbox" class="drawer-toggle" />
-
-      <!-- Drawer Content (Main Page) -->
       <section class="drawer-content">
         <div class="flex items-center md:w-fit md:gap-40">
           <h1 class="w-full">Your Notes</h1>
-          <!-- Drawer Button -->
-          <label
-            for="sidebar"
-            id="sideBarOpenBtnForNotes"
-            class="btn rounded-full w-12 bg-blue-500 text-2xl text-white h-12 p-2 font-bold text-center drawer-button"
-          >
-            +
-          </label>
+          <label for="sidebar" id="sideBarOpenBtnForNotes" class="btn rounded-full w-12 bg-blue-700 text-2xl text-white h-12 p-2 font-bold text-center drawer-button">+</label>
         </div>
-        <section
-          id="categorySection"
-          class="flex overflow-x-auto w-full gap-4 items-center py-4"
-        ></section>
-        <section
-          id="notesGrid"
-          class="py-2 grid md:grid-cols-2 gap-4 my-4"
-        ></section>
+        <section id="categorySection" class="flex overflow-x-auto w-full gap-4 items-center py-4"></section>
+        <section id="notesGrid" class="py-2 grid md:grid-cols-2 gap-4 my-4"></section>
       </section>
-
-      <!-- Drawer Sidebar -->
+      
       <section class="drawer-side">
-        <!-- Drawer Overlay -->
-        <label
-          for="sidebar"
-          aria-label="Close Sidebar"
-          class="drawer-overlay"
-        ></label>
-        <!-- Sidebar Menu -->
-        <div
-          class="menu bg-base-200 text-base-content min-h-full w-full lg:w-1/2 p-4"
-        >
+        <label for="sidebar" aria-label="Close Sidebar" class="drawer-overlay"></label>
+        <div class="menu bg-base-200 text-base-content min-h-full w-full lg:w-1/2 p-4">
           <span>
-            <label
-              for="sidebar"
-              aria-label="Close Sidebar"
-              class="drawer-button"
-              >close</label
-            >
+            <label for="sidebar" aria-label="Close Sidebar" class="drawer-button">Close</label>
           </span>
           <div id="sidebar-container"></div>
         </div>
       </section>
     </main>
-
-    <!-- Modal -->
+    
     <dialog id="user_modal" class="modal">
-      <div class="modal-box bg-blue-500 text-white" id="user_modal_box">
+      <div class="modal-box bg-blue-700 text-white" id="user_modal_box">
         <form method="dialog">
           <button class="btn bg-black text-white hover:bg-black">Close</button>
-          <button class="btn bg-black text-white hover:bg-black">Edit</button>
         </form>
       </div>
     </dialog>
-
-    <!-- Footer -->
-    <footer id="Footer" class="mt-4">
-      <!-- Footer content can go here -->
-    </footer>
-
-    <!-- Scripts -->
+    
+    <footer id="Footer" class="mt-4"></footer>
+    
     <script type="module" src="./ts/pages/index.ts"></script>
   </body>
 </html>

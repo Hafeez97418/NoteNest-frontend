@@ -20,6 +20,6 @@ export function getTagsFromNotes(notes: Notes[]) {
 export function removeTags(tagName: string) {
   document.querySelectorAll(`[${tagName}]`).forEach((elem) => {
     elem.removeAttribute(tagName);
-    elem.classList.remove("bg-blue-500", "text-white");
+    elem.classList.remove("bg-blue-700", "text-white");
   });
 }

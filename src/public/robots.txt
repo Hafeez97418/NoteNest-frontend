@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /admin.html
+Disallow: /admin
+Disallow: /
+Allow: /login.html
+Allow: /login
+Allow: /register.html
+Allow: /register
+Allow: /unauthorized.html
+Allow: /unauthorized
+
+Sitemap: http://localhost:5500/sitemap.xml

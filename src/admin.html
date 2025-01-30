@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteNest - Admin Dashboard</title>
+    <meta name="description" content="Manage users, themes, and settings efficiently with the NoteNest Admin Dashboard." />
+    <meta name="keywords" content="NoteNest, admin, dashboard, user management, themes" />
+    <meta name="author" content="NoteNest Team" />
+    <meta property="og:title" content="NoteNest - Admin Dashboard" />
+    <meta property="og:description" content="Control and configure your NoteNest notebook with the admin dashboard." />
+    <meta property="og:image" content="/android-chrome-512x512.png" />
+    <meta property="og:url" content="https://www.notenest.com/admin.html" />
+    <meta property="og:type" content="website" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="px-2 pt-4 flex flex-col">
+    <header id="Navbar"></header>
+    <main class="flex-grow my-4">
+      <h1>Admin Dashboard</h1>
+      <div class="my-4 flex flex-col sm:flex-row gap-4">
+        <section class="stat shadow-md border-2 place-items-center dark:border-white sm:w-fit">
+          <div class="stat-title dark:text-white">Users</div>
+          <div class="stat-value text-primary" id="totalUsers">0</div>
+          <div class="stat-desc text-primary">Total Users</div>
+        </section>
+        <section class="p-4 flex-grow h-[500px] border-2 shadow-md border-collapse flex flex-col">
+          <h2>List of Users</h2>
+          <form class="my-2 flex flex-col gap-4 sm:flex-row" id="UserSearch">
+            <input type="text" class="input-md rounded-md sm:w-1/4 border-2" placeholder="Search users by email" name="email" />
+            <span>
+              <button class="btn btn-primary">Search</button>
+            </span>
+          </form>
+          <ul id="userList" class="flex-grow overflow-y-scroll"></ul>
+        </section>
+      </div>
+      <div class="my-8">
+        <div class="flex items-center gap-10 my-8">
+          <h2>Note Themes</h2>
+          <button class="btn btn-primary btn-sm" id="showInputs">Create</button>
+        </div>
+        <form id="themeCreationForm" class="gap-4 flex-col max-w-sm hidden">
+          <input type="text" class="input input-bordered" placeholder="Theme Name" name="name" required />
+          <input type="text" class="input input-bordered" placeholder="Theme Color" name="color" required />
+          <button class="btn btn-primary">Submit</button>
+        </form>
+        <ul id="themeList" class="max-w-sm max-h-60 overflow-y-auto"></ul>
+      </div>
+    </main>
+    <footer id="Footer"></footer>
+    <dialog id="user_modal" class="modal">
+      <div class="modal-box bg-blue-700 text-white" id="user_modal_box">
+        <form method="dialog">
+          <button class="btn bg-black text-white hover:bg-black">Close</button>
+        </form>
+      </div>
+    </dialog>
+    <div class="dark fixed z-10 top-0 w-full left-0 h-full transition-transform -translate-y-full duration-1000 ease-in-out bg-white text-black p-8 flex flex-col" id="Layer2">
+      <button class="btn btn-primary w-fit">Close</button>
+      <div class="my-auto"></div>
+    </div>
+    <script type="module" src="./ts/pages/admin.ts"></script>
+  </body>
+</html>

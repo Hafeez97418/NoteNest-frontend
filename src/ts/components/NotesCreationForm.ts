@@ -36,10 +36,10 @@ const createNotesForm = (values?: Notes) => {
       </option>
     </select>
     <div class="flex gap-4">
-    <button class="btn btn-primary bg-blue-500 flex-grow" type="submit">save</button>
+    <button class="btn btn-primary bg-blue-700 flex-grow" type="submit">save</button>
     ${
       values
-        ? `<button class= "btn btn-error bg-blue-500 text-white"  id="deleteNotes" type="button"> delete </button>`
+        ? `<button class= "btn btn-error bg-blue-700 text-white"  id="deleteNotes" type="button"> delete </button>`
         : ""
     }
     </div>
@@ -68,7 +68,9 @@ class CreateNotesFormManager {
         for (const [key, value] of data.entries()) {
           body[key] = value;
         }
-        body.tag = "all";
+        if (body.tag.length <= 0) {
+          body.tag = "all";
+        }
         req.URLObject.endpoint = "/api/v1/notes";
         req.options.method = "POST";
         req.options.body = body;
